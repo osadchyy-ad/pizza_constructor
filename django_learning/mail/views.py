@@ -21,5 +21,5 @@ def send_email(email, fullname, total, phone):
                          .format(fullname, total, phone).encode('utf-8'), _charset='utf-8')
     smtp_obj = smtplib.SMTP('smtp.gmail.com', 587)
     smtp_obj.starttls()
-    smtp_obj.login('osadchyy.ad@gmail.com', 'IPS1300536feranos')
+    smtp_obj.login('','')
     smtp_obj.sendmail("osadchyy.ad@gmail.com", email, str(email_msg))
