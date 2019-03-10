@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Order</title>
+  <style type="text/css">
+   #content {
+    width: 800px;
+
+    margin: 0 auto 50px;
+   }
+
+   #ingredient {
+    float: left;
+    margin-right: 10px"
+   }
+
+   #footer {
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+    background: #8DB600;
+    color: #fff;
+    width: 100%;
+   }
+  </style>
+ </head>
+<body>
+    <div id="content" >
+    <form action="mail/" method="post">
+
+        <p>
+            <label for='fullname'>Имя:</label>
+            <input id="fullname" name="name" value="" type="text">
+        </p>
+        <p>
+            <label for='email'>E-mail</label>
+            <input id="email" name="email" value="" type="email">
+        </p>
+        <p>
+            <label for='phone'>Телефон</label>
+            <input id="phone" name="phone" value="" type="text">
+        </p>
+        <p>
+            <label for='total'>Сумма заказа:</label>
+            <span id="total">{{ total }}$</span>
+            <input type="text" name="total" value='{{ total }}$' hidden>
+        </p>
+        <input type="submit" value="Заказать">
+    </form>
+    </div>
+</body>
+</html>

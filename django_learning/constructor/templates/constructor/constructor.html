@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Pizza Constructor</title>
+  <style type="text/css">
+   #content {
+    width: 800px;
+
+    margin: 0 auto 50px;
+   }
+
+   #ingredient {
+    <!--float: left;-->
+    display: inline;
+    margin-right: 10px"
+   }
+
+   #footer {
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+    background: #8DB600;
+    color: #fff;
+    width: 100%;
+   }
+  </style>
+ </head>
+<body>
+    <div id="content"  >
+        <h2 >Тесто</h2>
+        <input type="radio" checked name="type" id="ital1"/><label for="ital1">Тонкое</label>
+        <input type="radio" name="type" id="amer"/><label for="amer">Толстое</label>
+        <form action="/order/" method="post">
+        {% for group in groups %}
+            <p>
+            <h3>{{ group.name }} </h3>
+            <div id="ingredient">
+            {% for ing in ingredients %}
+                {% if group.name == ing.group.name %}
+                    <div>
+                        <p><label for='{{ ing.id }}'>{{ ing.name }} {{ ing.price }}$</label></p>
+                        <input id='{{ ing.id }}' type="number" min=0 name="{{ ing.id }}" value=0>
+                        <!--<p><input type="number" name="price" value="1" step="any" required="" id="id_price"></p>-->
+                    </div>
+                {% endif %}
+            {% endfor %}
+            </div>
+            </p>
+        {% endfor %}
+            <input type="submit" value="Оформить заказ">
+        </form>
+
+    </div>
+
+   <div id="footer" align="center">
+        <span>Pizza Constructor by &copy; TheHuman</span>
+   </div>
+ </body>
+</html>
